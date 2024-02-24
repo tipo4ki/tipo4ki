@@ -1,0 +1,29 @@
+import tkinter as tk
+
+def check_name():
+    name = entry.get().lower()
+    if name in ['Светлана', 'Света', 'Светка']:
+        result_label.config(text="Дорогая мамочка, поздравлю тебя с днем рождения желаю тебе счаться, здоровья и чтоб ты всегда оставалась такой же красивой и умной. Жлеюа тебе удачи в рабоет, в жизни, чтоб было денег много! С праздником")
+    elif name in ['Катя', 'Екатерина', 'Катюша']:
+        result_label.config(text="Сестричка, поздравляю тебя с 8 марта, желаю тебе оставться всегда такой же юморной, смешной, позитивной умной и спортвной. Жлеюа успехов в спорте, учебе и чтоб ты хорошо закончила сессию! C праздником!")
+    elif name in ['иван', 'петр', 'василий']:
+        result_label.config(text="Простите, но это не мои любимые девочки :(.")
+    else:
+        result_label.config(text="Это не моя сестра или не моя мама.")
+
+root = tk.Tk()
+root.title("Поздравление с 8 марта")
+
+name_label = tk.Label(root, text="Введите имя:")
+name_label.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+submit_button = tk.Button(root, text="Проверить", command=check_name)
+submit_button.pack()
+
+result_label = tk.Label(root, text="")
+result_label.pack()
+
+root.mainloop()
